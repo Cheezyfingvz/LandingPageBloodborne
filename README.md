@@ -1,201 +1,32 @@
-# Bloodborne: La Cacería Eterna 🩸
+BloodborneLandingPage
 
-Página tributo interactiva dedicada a **Bloodborne**, el aclamado juego de acción de FromSoftware. Una experiencia web inmersiva que combina HTML5 semántico, CSS3 moderno y animaciones atmosféricas.
+Este es un proyecto tributo interactivo dedicado a Bloodborne. La idea fue crear una experiencia web inmersiva que capture la atmósfera del juego usando solo HTML5 semántico y CSS3 puro (con un toque de Bootstrap para el orden).
 
-## 📋 Características
 
-- ✅ **Estructura Semántica HTML5**: Uso correcto de `<header>`, `<section>`, `<article>`, `<footer>`
-- ✅ **CSS3 Moderno**: Flexbox, Grid, variables CSS, animaciones fluidas
-- ✅ **Diseño Responsivo**: Funciona perfectamente en móvil, tablet y desktop
-- ✅ **Accesibilidad WCAG AA**: Contraste de colores, enfoques visibles, navegación por teclado
-- ✅ **Efecto Atmosférico**: Sistema de niebla volumétrica con parallax
-- ✅ **Galería Interactiva**: 12+ tarjetas de personajes y jefes con links a YouTube
-- ✅ **Tipografía Premium**: Google Fonts (Cinzel Decorative + Crimson Text)
-- ✅ **Performance**: Carga lazy de imágenes, animaciones optimizadas
+Atmósfera de Yharnam: Fondos con parallax, efectos de niebla y colores inspirados en el juego.
 
-## 🎮 Secciones
+Enciclopedia de Cazadores y Bestias: Una galería con más de 12 tarjetas interactivas que te llevan a videos de YouTube para ver a los jefes en acción.
 
-1. **Hero Section** - Introducción épica con Call-to-Action
-2. **Cazadores de la Noche** - Personajes principales y aliados
-3. **Bestias de la Noche** - Jefes y criaturas del juego
-4. **Lore** - Cita atmosférica sobre el universo
-5. **Footer** - Información y créditos
+Diseño que no se rompe: Es responsive (Flexbox y Grid).
 
-## 🛠 Tecnologías
+Tipografía: Uso de Cinzel Decorative.
 
-- **HTML5** - Etiquetas semánticas
-- **CSS3** - Variables, Flexbox, Grid, Animations
-- **Bootstrap 5** - Sistema de grid responsivo
-- **Google Fonts** - Tipografía personalizada
-- **Vanilla JavaScript** - Intersection Observer para scroll reveal
+Lenguajes utilizados:
 
-## 📦 Instalación
+HTML5: Estructura limpia con etiquetas semánticas.
 
-### Requisitos
-- Navegador moderno (Chrome, Firefox, Safari, Edge)
-- No requiere servidor (funciona con `file://`)
+CSS3: Variables para los colores, animaciones fluidas y un diseño responsive.
 
-### Opción 1: Archivo local
-```bash
-# Descarga los archivos
-cd "tu_carpeta_del_proyecto"
+Bootstrap 5: Principalmente para que el sistema de columnas fuera rápido de armar.
 
-# Abre en tu navegador
-# Windows
-start index.html
+JS (Vanilla): Un poco de código para que los elementos aparezcan con animaciones suaves al bajar con el scroll.
 
-# macOS
-open index.html
+📁 Estructura del Proyecto
+Plaintext
+Pagina Bloodborne/
+├── index.html       # La base de todo
+├── estilos.css      # El decorativo de la página
+├── README.md        # Este texto
+└── assets/          # Imágenes y recursos
 
-# Linux
-xdg-open index.html
-```
-
-### Opción 2: Servidor local (recomendado)
-```python
-# Con Python 3
-cd "tu_carpeta_del_proyecto"
-python -m http.server 8000
-
-# Abre http://localhost:8000 en tu navegador
-```
-
-## 📁 Estructura del Proyecto
-
-```
-Pagina Bloodbourne/
-├── index.html          # Página principal con estructura HTML5 semántica
-├── estilos.css         # Estilos CSS3 con variables y responsive design
-├── README.md           # Este archivo
-└── assets/             # (Opcional) Para imágenes locales futuras
-```
-
-## 🎨 Personalización
-
-### Editar texto
-Abre `index.html` y modifica las etiquetas `<h1>`, `<p>`, `<h3>`, etc.
-
-### Cambiar colores
-En `estilos.css`, modifica las variables `:root`:
-```css
-:root {
-    --color-fondo: #0D0D0D;      /* Fondo oscuro */
-    --color-acento: #8C1C1C;     /* Rojo sangre */
-    --color-texto: #D9D9D9;      /* Texto claro */
-    --color-hueso: #C4B998;      /* Acentos claros */
-}
-```
-
-### Agregar nuevas tarjetas
-En `index.html`, duplica una `<article class="tarjeta">` y actualiza:
-- Imagen `src`
-- Tipo (span)
-- Nombre (h3)
-- Descripción (p)
-- Link YouTube (`href`)
-
-## ♿ Accesibilidad
-
-- ✅ Contraste WCAG AA cumplido (>7:1 en botones, >12:1 en texto)
-- ✅ Enfoques visibles (`:focus`) en todos los elementos interactivos
-- ✅ Navegación completa por teclado (Tab + Enter)
-- ✅ Imágenes con `alt` descriptivos
-- ✅ Estructura de headings lógica (h1 → h2 → h3)
-
-## 📱 Responsive Design
-
-```css
-/* Mobile-first approach */
-- < 768px: Columna única
-- 768px - 1024px: 2 columnas (tablet)
-- > 1024px: 3-4 columnas (desktop)
-```
-
-## 🔄 Control de Versiones
-
-### Commits Semánticos
-```bash
-# Características nuevas
-git commit -m "feat: agregar tarjeta de Presencia Lunar"
-
-# Correcciones
-git commit -m "fix: mejorar contraste WCAG en botones"
-
-# Estilos
-git commit -m "style: aumentar espaciado del botón hero"
-
-# Documentación
-git commit -m "docs: actualizar README con instrucciones"
-
-# Refactoring
-git commit -m "refactor: consolidar variables CSS"
-```
-
-### Workflow recomendado
-```bash
-# 1. Crear rama para nueva funcionalidad
-git checkout -b feat/nueva-seccion
-
-# 2. Realizar cambios
-# ... edita archivos ...
-
-# 3. Commitear cambios
-git add .
-git commit -m "feat: agregar nueva sección"
-
-# 4. Subir a GitHub
-git push origin feat/nueva-seccion
-
-# 5. Crear Pull Request en GitHub
-# Luego fusionar a main
-
-# 6. Actualizar rama local
-git checkout main
-git pull origin main
-```
-
-### Respaldo en la nube
-```bash
-# Crear commits periódicos (después de cada cambio importante)
-git commit -m "descripción del cambio"
-
-# Subir a GitHub
-git push origin main
-
-# Verificar estado
-git status
-git log --oneline -5
-```
-
-## 🤝 Contribuciones
-
-Las contribuciones son bienvenidas. Por favor:
-
-1. Fork el repositorio
-2. Crea una rama (`git checkout -b mejora/descripcion`)
-3. Commit cambios (`git commit -m "tipo: descripción"`)
-4. Push a la rama (`git push origin mejora/descripcion`)
-5. Abre un Pull Request
-
-## 📜 Licencia
-
-Este proyecto es un tributo educativo sin fines comerciales a **Bloodborne** © FromSoftware.
-
-Página desarrollada con fines académicos para demostrar:
-- HTML5 semántico
-- CSS3 moderno
-- Responsive design
-- Accesibilidad WCAG AA
-- Control de versiones Git
-
-## 📞 Información
-
-- **Juego Original**: Bloodborne (FromSoftware, 2015)
-- **Plataforma**: PlayStation 4 / PlayStation 5
-- **Desarrollador página**: Proyecto educativo
-
----
-
-**Que la buena sangre guíe tu camino.** 🩸🌙
-
-Última actualización: Marzo 2026
+Que la buena sangre guíe tu camino.
