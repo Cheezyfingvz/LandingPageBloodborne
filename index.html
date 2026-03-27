@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bloodborne: La Caceria Eterna</title>
+    
+    <!-- Bootstrap 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Estilos Personalizados -->
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+    <!-- ============================================
+         SISTEMA DE NIEBLA VOLUMÉTRICA
+         Capas múltiples para crear profundidad y densidad
+         ============================================ -->
+    <div class="niebla-sistema" aria-hidden="true">
+        <div class="niebla-capa niebla-fondo"></div>
+        <div class="niebla-capa niebla-media"></div>
+        <div class="niebla-capa niebla-frontal"></div>
+        <!-- Destellos de faroles en la niebla -->
+        <div class="farol-brillo farol-1"></div>
+        <div class="farol-brillo farol-2"></div>
+        <div class="farol-brillo farol-3"></div>
+    </div>
+
+    <!-- ============================================
+         HERO SECTION
+         ============================================ -->
+    <header class="hero">
+        <div class="hero-contenido">
+            <h1 class="hero-titulo">Bloodborne: La Caceria Eterna</h1>
+            <p class="hero-subtitulo">
+                Calles empedradas marcadas por ritos olvidados.
+                 Una luna inmóvil que observa con la paciencia de los dioses antiguos. 
+                 En Yharnam, la cacería es perpetua, y la cura no es más que el origen mismo de la condena.
+                 Enfrenta lo innombrable, bebe de lo prohibido y asume el destino que aguarda en el Sueño del Cazador. 
+                 La noche se extiende sin clemencia, y la sangre —densa, sagrada y corrupta— exige su tributo.
+            <!-- Enlace al inicio de la cacería -->
+            <a href="#personajes" class="hero-llamada">Iniciar la Caceria</a>
+        </div>
+    </header>
+
+    <!-- ============================================
+         SECCIÓN PERSONAJES
+         ============================================ -->
+    <section class="seccion" id="personajes">
+        <div class="container">
+            <h2 class="seccion-titulo revelar">Cazadores de la Noche</h2>
+            <p class="seccion-descripcion revelar">
+                Aquellos que han abrazado la caza, portadores del eco de sangre y guardianes de secretos ancestrales.
+            </p>
+
+            <div class="row g-4">
+                
+                <!-- Tarjeta: The Hunter -->
+                <div class="col-12 col-md-6 col-lg-3 card-contenedor tarjeta-reveal revelar">
+                    <article class="tarjeta">
+                        <div class="tarjeta-imagen">
+                            <img src="https://cdn.mos.cms.futurecdn.net/sfiNueEkXAA7LGkUatQstb-1920-80.jpg" 
+                                 alt="Ilustración de un cazador encapuchado" 
+                                 loading="lazy">
+                        </div>
+                        <div class="tarjeta-cuerpo">
+                            <span class="tarjeta-tipo">Hunter</span>
+                            <h3 class="tarjeta-nombre">The Hunter</h3>
+                            <p class="tarjeta-descripcion">
+                                Una figura espectral que transita la linde entre la razón y el delirio, avanza con la determinación del condenado bajo el firmamento de una noche eterna.
+                                Con el acero impregnado en visceras y una voluntad forjada en el Sueño, desafía a horrores cuya mera existencia blasfema contra toda lógica,
+                                mientras su propia humanidad se desvanece como el vaho en el aire gélido de Yharnam. No es un redentor, ni un sacrificio sagrado;
+                                es el escalpelo de la cacería, un instrumento de hierro y vísceras destinado a desentrañar una verdad que, una vez revelada,
+                                resulta más mortal que la propia plaga de la sangre.
+                            </p>
+                            <a href="https://www.youtube.com/watch?v=wjWOy6ioVHI" target="_blank" class="tarjeta-boton">Ver Encuentro</a>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Tarjeta: Gehrman -->
+                <div class="col-12 col-md-6 col-lg-3 card-contenedor tarjeta-reveal revelar">
+                    <article class="tarjeta">
+                        <div class="tarjeta-imagen">
+                            <img src="https://static.wikia.nocookie.net/bloodborne/images/6/60/Image-bloodborne-c01.jpg" 
+                                 alt="Figura anciana con guadaña" 
+                                 loading="lazy">
+                        </div>
+                        <div class="tarjeta-cuerpo">
+                            <span class="tarjeta-tipo">First Hunter</span>
+                            <h3 class="tarjeta-nombre">Gehrman</h3>
+                            <p class="tarjeta-descripcion">
+                                El Primer Cazador habita en el epicentro de un sueño anquilosado, allí donde los ecos del pasado nunca hallan el silencio del olvido.
+                                Bajo su apariencia de anciano quebrado, yace la destreza letal de aquel que fue el primero en danzar al compás del acero y la sangre;
+                                un maestro de la siega que aguarda en su silla de ruedas como un espectro entre las flores. Guardián de un legado sangriento y siervo encadenado a una voluntad cósmica,
+                                encarna la tragedia del despertar negado: un hombre cuyo único acto de misericordia es la muerte
+                                y cuya propia redención es la cadena que lo ata perpetuamente al pie de la Gran Haya.
+                            </p>
+                            <!-- Link: Escena final con Gehrman -->
+                            <a href="https://www.youtube.com/results?search_query=bloodborne+gehrman+boss+fight" target="_blank" class="tarjeta-boton">Ver Encuentro</a>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Tarjeta: Lady Maria -->
+                <div class="col-12 col-md-6 col-lg-3 card-contenedor tarjeta-reveal revelar">
+                    <article class="tarjeta">
+                        <div class="tarjeta-imagen">
+                            <img src="https://static.wikia.nocookie.net/bloodborne/images/6/6e/Bloodborne™_20151207224701.png/revision/latest?cb=20151207210733" 
+                                 alt="Mujer guerrera con espadas" 
+                                 loading="lazy">
+                        </div>
+                        <div class="tarjeta-cuerpo">
+                            <span class="tarjeta-tipo">Hunter</span>
+                            <h3 class="tarjeta-nombre">Lady Maria</h3>
+                            <p class="tarjeta-descripcion">
+                                Guardiana del Reloj Astral, encarna la elegancia letal de una cazadora que ha intentado sepultar su propia 
+                                estirpe bajo el peso del olvido. 
+                                Su porte sereno oculta una violencia de precisión quirúrgica, donde cada estocada es una danza 
+                                dictada por la culpa y la disciplina inquebrantable. En ella, la gracia y la tragedia convergen en un último acto de vigilia:
+                                 Un alma que lucha por silenciar los horrores del pasado, aun cuando este arde con una furia carmesí en cada filo que empuña.
+                            </p>
+                            <a href="https://www.youtube.com/results?search_query=bloodborne+lady+maria+boss+fight" target="_blank" class="tarjeta-boton">Ver Encuentro</a>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Tarjeta: Eileen -->
+                <div class="col-12 col-md-6 col-lg-3 card-contenedor tarjeta-reveal revelar">
+                    <article class="tarjeta">
+                        <div class="tarjeta-imagen">
+                            <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/629b35ef-08a9-4086-8d12-6ac90897f242/dfg0fcd-fe65066e-5983-4364-93d1-c4916837bf8c.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiIvZi82MjliMzVlZi0wOGE5LTQwODYtOGQxMi02YWM5MDg5N2YyNDIvZGZnMGZjZC1mZTY1MDY2ZS01OTgzLTQzNjQtOTNkMS1jNDkxNjgzN2JmOGMuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.iZA0VtDXauhZocGW-kQngtM5sa5x65hDitZJfaN8iAU" 
+                                 alt="Figura con máscara de cuervo" 
+                                 loading="lazy">
+                        </div>
+                        <div class="tarjeta-cuerpo">
+                            <span class="tarjeta-tipo">Hunter</span>
+                            <h3 class="tarjeta-nombre">Eileen the Crow</h3>
+                            <p class="tarjeta-descripcion">
+                                La sombra silenciosa que da caza a los cazadores caídos, se desliza por las calles empapadas de Yharnam con una 
+                                gracia fúnebre y un propósito inquebrantable. Su silueta, envuelta en un manto de plumas cenicientas y salpicada 
+                                por el óxido de la sangre vieja, es el presagio de un juicio ineludible para aquellos cuyas mentes han sido devoradas
+                                 por la embriaguez de la cacería. No busca la gloria de la batalla ni el consuelo de la redención; ella es el frío 
+                                 equilibrio de la noche. Una hoja de piedad, afilada y certera, que desgarra la carne para silenciar los alaridos de aquello
+                                 que ya no puede ser salvado.
+                            </p>
+                            <a href="https://www.youtube.com/results?search_query=bloodborne+eileen+the+crow+boss+fight" target="_blank" class="tarjeta-boton">Ver Encuentro</a>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Tarjeta: Father Gascoigne -->
+                <div class="col-12 col-md-6 col-lg-3 card-contenedor tarjeta-reveal revelar">
+                    <article class="tarjeta">
+                        <div class="tarjeta-imagen">
+                            <img src="https://img2-levelup.buscafs.com/598524_600x315.jpg" 
+                                 alt="Guerrero con hacha" 
+                                 loading="lazy">
+                        </div>
+                        <div class="tarjeta-cuerpo">
+                            <span class="tarjeta-tipo">Hunter</span>
+                            <h3 class="tarjeta-nombre">Father Gascoigne</h3>
+                            <p class="tarjeta-descripcion">
+                                El Padre Gascoigne, un cazador devorado por la vorágine de la sangre, se erige como el lúgubre umbral entre el deber sagrado y 
+                                la condena eterna. Su fervor, antaño un faro de fe y razón, ha sido ahogado por un instinto primario y desatado que desgarra 
+                                cada vestigio de su humanidad. En su furia bestial resuena una verdad atroz: incluso los más devotos caen, cuando la cacería deja 
+                                de ser un propósito y se transmuta en una maldición ineludible.
+                            </p>
+                            <a href="https://www.youtube.com/results?search_query=bloodborne+father+gascoigne+boss+fight" target="_blank" class="tarjeta-boton">Ver Encuentro</a>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Tarjeta: The Doll -->
+                <div class="col-12 col-md-6 col-lg-3 card-contenedor tarjeta-reveal revelar">
+                    <article class="tarjeta">
+                        <div class="tarjeta-imagen">
+                            <img src="https://static.wikia.nocookie.net/bloodborne/images/1/1f/Image-bloodborne-doll-07b.jpg/revision/latest/scale-to-width-down/250?cb=20150416070839" 
+                                 alt="Figura etérea en jardín" 
+                                 loading="lazy">
+                        </div>
+                        <div class="tarjeta-cuerpo">
+                            <span class="tarjeta-tipo">Ally</span>
+                            <h3 class="tarjeta-nombre">The Doll</h3>
+                            <p class="tarjeta-descripcion">
+                                La Muñeca, figura etérea en el Sueño del Cazador, es un eco de devoción y un recipiente inmaculado para los Ecos de Sangre. 
+                                Sus ojos vacíos reflejan la soledad de un reino onírico, mientras su voz melancólica guía al cazador. 
+                                En la vorágine de locura y sangre de Yharnam, ella emerge como el único faro de cordura, encarnando un amor 
+                                incondicional y una bondad pura. Su existencia, un lamento silencioso, es el ancla que, a pesar de todo, 
+                                une al cazador a la cordura, ofreciéndole un respiro de la pesadilla incesante.
+                            </p>
+                            <a href="https://www.youtube.com/results?search_query=bloodborne+the+doll+gameplay" target="_blank" class="tarjeta-boton">Ver Encuentro</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SECCIÓN LORE
+         ============================================ -->
+    <section class="lore-seccion">
+        <div class="lore-contenido revelar">
+            <blockquote class="lore-cita">
+                Los Grandes que habitan las profundidades del cosmos observan con curiosidad 
+                nuestras pequeñas existencias. La sangre es su regalo, la locura su precio.
+            </blockquote>
+            <cite class="lore-autor">— Willem, Maestro de Byrgenwerth</cite>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SECCIÓN CRIATURAS
+         ============================================ -->
+    <section class="seccion" id="criaturas">
+        <div class="container">
+            <h2 class="seccion-titulo revelar">Bestias de la Noche</h2>
+            <p class="seccion-descripcion revelar">
+                Criaturas nacidas de la sangre corrompida y la influencia cósmica.
+            </p>
+
+            <div class="row g-4">
+                <!-- Tarjeta: Cleric Beast -->
+                <div class="col-12 col-md-6 col-lg-3 card-contenedor tarjeta-reveal revelar">
+                    <article class="tarjeta">
+                        <div class="tarjeta-imagen">
+                            <img src="https://static0.thegamerimages.com/wordpress/wp-content/uploads/2020/12/Cleric-Beast.jpg?q=50&fit=crop&w=825&dpr=1.5" 
+                                 alt="Bestia gigante con cuernos" 
+                                 loading="lazy">
+                        </div>
+                        <div class="tarjeta-cuerpo">
+                            <span class="tarjeta-tipo">Boss</span>
+                            <h3 class="tarjeta-nombre">Cleric Beast</h3>
+                            <p class="tarjeta-descripcion">
+                                Heraldo de una vigilia sangrienta, se yergue como la culminación de una fe transmutada en espanto.
+                                Su anatomía, un monumento de extremidades asimétricas y pelaje erizado, aún exhala los vapores de una santidad que ha degenerado en frenesí absoluto.
+                                En su bramido ensordecedor, las plegarias se marchitan y el Gran Puente se convierte en un altar de piedra y sangre;
+                                allí, la última chispa de humanidad sucumbe ante la maldición de la sangre, revelando que en Yharnam, la devoción más profunda solo precede a la bestialidad más abyecta.
+                            </p>
+                            <a href="https://www.youtube.com/results?search_query=bloodborne+cleric+beast+boss+fight" target="_blank" class="tarjeta-boton">Ver Encuentro</a>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Tarjeta: Vicar Amelia -->
+                <div class="col-12 col-md-6 col-lg-3 card-contenedor tarjeta-reveal revelar">
+                    <article class="tarjeta">
+                        <div class="tarjeta-imagen">
+                            <img src="https://static.wikia.nocookie.net/bloodborne/images/c/c6/Vicaria_Amelia.jpg/revision/latest/thumbnail/width/360/height/360?cb=20241209154602&path-prefix=es" 
+                                 alt="Bestia lupina gigante" 
+                                 loading="lazy">
+                        </div>
+                        <div class="tarjeta-cuerpo">
+                            <span class="tarjeta-tipo">Boss</span>
+                            <h3 class="tarjeta-nombre">Vicar Amelia</h3>
+                            <p class="tarjeta-descripcion">
+                                La Vicaria Amelia, otrora pilar de una fe inquebrantable, se alza ahora como el heraldo de una pureza devastada por la corrupción de la sangre.
+                                Su figura, una amalgama de espanto y restos de seda litúrgica, se aferra con garras frenéticas a un colgante de oro, balbuceando los ecos de una plegaria que el cosmos ha decidido ignorar.
+                                En este sagrario de lamentos, la santidad no es más que una máscara de marfil resquebrajada, y la devoción, el último suspiro de una bestia que aún se cree santa bajo el peso de la maldición eterna.
+                            </p>
+                            <a href="https://www.youtube.com/results?search_query=bloodborne+vicar+amelia+boss+fight" target="_blank" class="tarjeta-boton">Ver Encuentro</a>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Tarjeta: Amygdala -->
+                <div class="col-12 col-md-6 col-lg-3 card-contenedor tarjeta-reveal revelar">
+                    <article class="tarjeta">
+                        <div class="tarjeta-imagen">
+                            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi9j1xoOppV0gwUQ-IRIhwz_WU3tL4iXlr7-Or8H-3i9eWlQldGDlH9db0lp2hectmwk-1Kae1dppQ_4N3jF_b8Bbev4q4vFrcXo-U0JvWTPI5obZVTxxBX7a1527rcSEh5ePxnHB_8ODBPZz5uxLdiDEt3sC15ZwU3FiqRdkfrWqSqc1UtO8ElVbLpcCAL/s488/Screenshot%202023-12-21%2016-42-11.png" 
+                                 alt="Entidad cósmica multiocular" 
+                                 loading="lazy">
+                        </div>
+                        <div class="tarjeta-cuerpo">
+                            <span class="tarjeta-tipo">Great One</span>
+                            <h3 class="tarjeta-nombre">Amygdala</h3>
+                            <p class="tarjeta-descripcion">
+                                Criatura de innumerables extremidades y forma antinatural, se adhiere a los límites de la realidad como un vigía de lo incomprensible. 
+                                Oculta a los ojos no iniciados, su existencia revela una verdad inquietante: el mundo es apenas un velo ante fuerzas que exceden la razón. 
+                                Bajo su mirada, la cordura se fragmenta y lo humano se vuelve insignificante frente a lo cósmico.
+                            </p>
+                            <a href="https://www.youtube.com/results?search_query=bloodborne+amygdala+boss+fight" target="_blank" class="tarjeta-boton">Ver Encuentro</a>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Tarjeta: Mergo's Wet Nurse -->
+                <div class="col-12 col-md-6 col-lg-3 card-contenedor tarjeta-reveal revelar">
+                    <article class="tarjeta">
+                        <div class="tarjeta-imagen">
+                            <img src="https://bogleech.com/souls/bb-mergoswetnurse4.png" 
+                                 alt="Figura espectral con múltiples brazos" 
+                                 loading="lazy">
+                        </div>
+                        <div class="tarjeta-cuerpo">
+                            <span class="tarjeta-tipo">Boss</span>
+                            <h3 class="tarjeta-nombre">Mergo's Wet Nurse</h3>
+                            <p class="tarjeta-descripcion">
+                                La guardiana de un lamento que nunca cesa, se manifiesta como una sombra envuelta en velos y filos danzantes.
+                                Su presencia, silenciosa y ominosa, resguarda un secreto nacido del sueño y la sangre, donde la maternidad se distorsiona en algo insondable.
+                                Bajo su influjo, el tiempo parece plegarse y la realidad se disuelve en un susurro perpetuo de oscuridad.
+                            </p>
+                            <a href="https://www.youtube.com/results?search_query=bloodborne+mergo+wet+nurse+boss+fight" target="_blank" class="tarjeta-boton">Ver Encuentro</a>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Tarjeta: Presencia Lunar -->
+                <div class="col-12 col-md-6 col-lg-3 card-contenedor tarjeta-reveal revelar">
+                    <article class="tarjeta">
+                        <div class="tarjeta-imagen">
+                            <img src="https://static.wikia.nocookie.net/bloodborne/images/4/45/Presencia_lunar.jpg/revision/latest?cb=20241206215751&path-prefix=es" 
+                                 alt="Presencia cósmica pálida" 
+                                 loading="lazy">
+                        </div>
+                        <div class="tarjeta-cuerpo">
+                            <span class="tarjeta-tipo">Great One</span>
+                            <h3 class="tarjeta-nombre">Moon Presence</h3>
+                            <p class="tarjeta-descripcion">
+                                Ente primigenio y velado en lo arcano, desciende bajo el pálido influjo de la noche como una deidad olvidada. 
+                                Su forma, ajena a toda razón humana, encarna el pacto silencioso entre la sangre y el sueño, gobernando desde las sombras los hilos de la cacería eterna. 
+                                En su presencia, la voluntad se disuelve y solo queda la sumisión a un designio insondable.
+                            </p>
+                            <a href="https://www.youtube.com/watch?v=ACTHcfjfsEU&t=15s" target="_blank" class="tarjeta-boton">Ver Encuentro</a>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Tarjeta: Emisario Celestial -->
+                <div class="col-12 col-md-6 col-lg-3 card-contenedor tarjeta-reveal revelar">
+                    <article class="tarjeta">
+                        <div class="tarjeta-imagen">
+                            <img src="https://media.vandal.net/i/900x900/3-2018/201836185743_1.jpg" 
+                                 alt="Entidad cósmica humanoide" 
+                                 loading="lazy">
+                        </div>
+                        <div class="tarjeta-cuerpo">
+                            <span class="tarjeta-tipo">Great One</span>
+                            <h3 class="tarjeta-nombre">Celestial Emissary</h3>
+                            <p class="tarjeta-descripcion">
+                                Un engendro de aspiraciones prohibidas, se alza como un eco distorsionado del anhelo humano por trascender. 
+                                En su apariencia frágil y multiplicada yace un misterio insondable, donde lo divino y lo aberrante convergen en un grotesco simulacro de ascensión. 
+                                Bajo su fulgor enfermizo, la fe se torna engaño… y la iluminación, una burla cruel del cosmos.
+                            </p>
+                            <a href="https://www.youtube.com/results?search_query=bloodborne+celestial+emissary+boss+fight" target="_blank" class="tarjeta-boton">Ver Encuentro</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         FOOTER
+         ============================================ -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-contenido">
+                <p class="footer-logo">Bloodborne</p>
+                <p class="footer-texto">Contempla el firmamento, pues la verdad es un rastro de sangre bajo una luna que nunca duerme.</p>
+                <p class="footer-texto" style="margin-top: 0.5rem; font-size: 0.8rem;">Cheezyfingvz, 2026.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Scripts propios -->
+    <script>
+        // ============================================
+        // SCROLL REVEAL
+        // ============================================
+        document.addEventListener('DOMContentLoaded', () => {
+            const elementosRevelar = document.querySelectorAll('.revelar');
+            
+            const observer = new IntersectionObserver((entradas) => {
+                entradas.forEach(entrada => {
+                    if (entrada.isIntersecting) {
+                        entrada.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            elementosRevelar.forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,562 @@
+/* ============================================
+   VARIABLES CSS - PALETA BLOODBORNE
+   ============================================ */
+:root {
+    --color-fondo: #0D0D0D;
+    --color-acento: #8C1C1C;
+    --color-texto: #D9D9D9;
+    --color-secundario: #262626;
+    --color-hover: #590F0F;
+    --color-sangre: #4A0E0E;
+    --color-hueso: #C4B998;
+    
+    /* Colores para la niebla - Mayor visibilidad */
+    --niebla-gris: rgba(60, 55, 50, 0.6);
+    --niebla-oscura: rgba(20, 18, 15, 0.8);
+    --niebla-rojiza: rgba(70, 20, 20, 0.4);
+    
+    /* Tipografía */
+    --font-display: 'Cinzel Decorative', serif;
+    --font-body: 'Crimson Text', serif;
+    
+    /* Transiciones */
+    --transicion-suave: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* ============================================
+   RESET Y BASE
+   ============================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    line-height: 1.7;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+::selection {
+    background-color: var(--color-acento);
+    color: var(--color-hueso);
+}
+
+/* ============================================
+   SISTEMA DE NIEBLA VOLUMÉTRICA (SIN NIEVE)
+   ============================================ */
+.niebla-sistema {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+}
+
+/* Capa base oscura */
+.niebla-fondo {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(ellipse at center, transparent 0%, var(--color-fondo) 90%);
+    z-index: 1;
+}
+
+/* Capas de niebla móvil */
+.niebla-capa {
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    top: -50%;
+    left: -50%;
+    background-image: 
+        radial-gradient(ellipse at 20% 30%, var(--niebla-gris) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 70%, var(--niebla-rojiza) 0%, transparent 45%),
+        radial-gradient(ellipse at 50% 50%, var(--niebla-oscura) 0%, transparent 60%);
+    opacity: 0.8;
+    filter: blur(60px); /* Suaviza los bordes para efecto de bruma */
+}
+
+.niebla-media {
+    animation: nieblaFlotanteLenta 60s linear infinite;
+    transform-origin: center;
+    mix-blend-mode: overlay;
+}
+
+.niebla-frontal {
+    background-image: 
+        radial-gradient(ellipse at 60% 20%, var(--niebla-gris) 0%, transparent 40%),
+        radial-gradient(ellipse at 30% 80%, var(--niebla-rojiza) 0%, transparent 35%);
+    animation: nieblaFlotanteRapida 45s linear infinite reverse;
+    opacity: 0.6;
+    mix-blend-mode: soft-light;
+}
+
+/* Animaciones de niebla */
+@keyframes nieblaFlotanteLenta {
+    0% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(-5%, -5%) scale(1.1); }
+    100% { transform: translate(0, 0) scale(1); }
+}
+
+@keyframes nieblaFlotanteRapida {
+    0% { transform: translate(0, 0) rotate(0deg); }
+    50% { transform: translate(5%, 5%) rotate(5deg); }
+    100% { transform: translate(0, 0) rotate(0deg); }
+}
+
+/* Faroles en la niebla (Puntos de luz) */
+.farol-brillo {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 180, 100, 0.15) 0%, transparent 70%);
+    filter: blur(40px);
+    animation: parpadeoLuz 8s infinite ease-in-out;
+}
+
+.farol-1 { top: 20%; left: 10%; animation-delay: 0s; }
+.farol-2 { top: 60%; right: 5%; animation-delay: 2s; width: 400px; height: 400px; }
+.farol-3 { bottom: 10%; left: 30%; animation-delay: 4s; }
+
+@keyframes parpadeoLuz {
+    0%, 100% { opacity: 0.3; transform: scale(1); }
+    50% { opacity: 0.7; transform: scale(1.2); }
+}
+
+/* Respetar preferencias de movimiento */
+@media (prefers-reduced-motion: reduce) {
+    .niebla-capa, .farol-brillo {
+        animation: none;
+    }
+}
+
+/* ============================================
+   HERO SECTION
+   ============================================ */
+.hero, .hero-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+    position: relative;
+    z-index: 10; /* Encima de la niebla */
+    background: transparent;
+}
+
+.hero-contenido, .hero-section .container {
+    max-width: 900px;
+    animation: heroEntrada 2s ease-out forwards;
+}
+
+@keyframes heroEntrada {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-titulo, .hero-title {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    font-weight: 900;
+    color: var(--color-hueso);
+    letter-spacing: 0.05em;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    text-shadow: 
+        0 0 40px rgba(140, 28, 28, 0.6),
+        0 4px 20px rgba(0, 0, 0, 0.9);
+}
+
+.hero-subtitulo, .hero-subtitle {
+    font-size: clamp(1rem, 3vw, 1.4rem);
+    font-weight: 400;
+    font-style: italic;
+    color: var(--color-texto);
+    max-width: 700px;
+    margin: 0 auto 2.5rem;
+    opacity: 0.9;
+    line-height: 1.8;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+}
+
+.hero-llamada {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    margin-top: 4rem;
+    font-family: var(--font-display);
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--color-hueso);
+    background: linear-gradient(135deg, var(--color-acento) 0%, var(--color-sangre) 100%);
+    border: 1px solid var(--color-acento);
+    text-decoration: none;
+    transition: var(--transicion-suave);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-llamada:hover {
+    background: linear-gradient(135deg, var(--color-hover) 0%, var(--color-acento) 100%);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(140, 28, 28, 0.5);
+}
+
+.hero-llamada:focus {
+    outline: 2px solid var(--color-hueso);
+    outline-offset: 3px;
+}
+
+/* ============================================
+   SECCIONES DE CONTENIDO
+   ============================================ */
+.seccion {
+    padding: 5rem 0;
+    position: relative;
+    z-index: 10;
+    /* Fondo semi-transparente para legibilidad sobre niebla */
+    background: rgba(13, 13, 13, 0.85);
+    backdrop-filter: blur(5px);
+    margin-top: 2rem;
+}
+
+.seccion-titulo {
+    font-family: var(--font-display);
+    font-size: clamp(1.8rem, 5vw, 2.8rem);
+    font-weight: 700;
+    color: var(--color-hueso);
+    text-align: center;
+    margin-bottom: 1rem;
+    letter-spacing: 0.1em;
+}
+
+.seccion-titulo::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--color-acento), transparent);
+    margin: 1rem auto 0;
+}
+
+.seccion-descripcion {
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--color-texto);
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 3rem;
+    opacity: 0.8;
+}
+
+/* ============================================
+   TARJETAS (CARDS)
+   ============================================ */
+.card-contenedor, .caceria-grid {
+    padding: 1rem;
+}
+
+.tarjeta, .hunter-card {
+    background: linear-gradient(145deg, #1a1a1a 0%, #0a0a0a 100%);
+    border: 1px solid rgba(140, 28, 28, 0.5);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: var(--transicion-suave);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.tarjeta:hover, .hunter-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--color-acento);
+    box-shadow: 
+        0 15px 40px rgba(0, 0, 0, 0.7),
+        0 0 20px rgba(140, 28, 28, 0.3);
+}
+
+.tarjeta-imagen, .card-img-wrapper {
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+}
+
+.tarjeta-imagen img, .card-img-custom {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transicion-suave);
+    filter: saturate(0.6) brightness(0.7);
+}
+
+.tarjeta:hover .tarjeta-imagen img, .hunter-card:hover .card-img-custom {
+    transform: scale(1.05);
+    filter: saturate(0.8) brightness(0.85);
+}
+
+/* Overlay en imagen */
+.tarjeta-imagen::after, .card-img-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent 50%, rgba(0,0,0,0.8) 100%);
+}
+
+.tarjeta-cuerpo {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+.card-body-custom {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.tarjeta-tipo {
+    font-family: var(--font-display);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--color-acento);
+    margin-bottom: 0.5rem;
+    background: rgba(140, 28, 28, 0.15);
+    padding: 0.25rem 0.75rem;
+    border-radius: 2px;
+    align-self: flex-start;
+}
+.card-type {
+    font-family: var(--font-display);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--color-acento);
+    margin-bottom: 0.5rem;
+    background: rgba(140, 28, 28, 0.15);
+    padding: 0.25rem 0.75rem;
+    border-radius: 2px;
+    align-self: flex-start;
+}
+
+.tarjeta-nombre {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--color-hueso);
+    margin-bottom: 0.75rem;
+}
+.card-name {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--color-hueso);
+    margin-bottom: 0.75rem;
+}
+
+.tarjeta-descripcion {
+    font-size: 0.95rem;
+    color: var(--color-texto);
+    opacity: 0.85;
+    line-height: 1.6;
+    flex-grow: 1;
+    margin-bottom: 1.25rem;
+}
+.card-desc {
+    font-size: 0.95rem;
+    color: var(--color-texto);
+    opacity: 0.85;
+    line-height: 1.6;
+    flex-grow: 1;
+    margin-bottom: 1.25rem;
+}
+
+.tarjeta-boton {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    font-family: var(--font-display);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--color-hueso);
+    background: transparent;
+    border: 1px solid var(--color-acento);
+    text-decoration: none;
+    text-align: center;
+    transition: var(--transicion-suave);
+    margin-top: auto;
+    cursor: pointer;
+}
+.btn-gothic {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    font-family: var(--font-display);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--color-hueso);
+    background: transparent;
+    border: 1px solid var(--color-acento);
+    text-decoration: none;
+    text-align: center;
+    transition: var(--transicion-suave);
+    margin-top: auto;
+    cursor: pointer;
+}
+
+.tarjeta-boton:hover, .btn-gothic:hover {
+    background: var(--color-acento);
+    box-shadow: 0 0 15px rgba(140, 28, 28, 0.5);
+}
+
+.tarjeta-boton:focus, .btn-gothic:focus {
+    outline: 2px solid var(--color-hueso);
+    outline-offset: 2px;
+    background: var(--color-acento);
+    box-shadow: 0 0 15px rgba(140, 28, 28, 0.5);
+}
+
+/* ============================================
+   SECCIÓN LORE
+   ============================================ */
+.lore-seccion {
+    background: transparent;
+    padding: 6rem 0;
+    position: relative;
+    z-index: 10;
+}
+
+.lore-contenido {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 0 2rem;
+}
+
+.lore-cita {
+    font-size: clamp(1.2rem, 3vw, 1.6rem);
+    font-style: italic;
+    color: var(--color-texto);
+    line-height: 1.9;
+    margin-bottom: 2rem;
+    position: relative;
+    padding: 0 2rem;
+}
+
+.lore-cita::before, .lore-cita::after {
+    content: '"';
+    font-family: var(--font-display);
+    font-size: 3rem;
+    color: var(--color-acento);
+    opacity: 0.5;
+    position: absolute;
+}
+
+.lore-cita::before { top: -0.5rem; left: 0; }
+.lore-cita::after { bottom: -1.5rem; right: 0; }
+
+.lore-autor {
+    font-family: var(--font-display);
+    font-size: 0.9rem;
+    letter-spacing: 0.2em;
+    color: var(--color-hueso);
+    opacity: 0.7;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.footer {
+    background: rgba(5, 5, 5, 0.95);
+    padding: 3rem 0 2rem;
+    border-top: 1px solid rgba(140, 28, 28, 0.2);
+    position: relative;
+    z-index: 10;
+}
+
+.footer-contenido {
+    text-align: center;
+}
+
+.footer-logo {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    color: var(--color-hueso);
+    letter-spacing: 0.1em;
+    margin-bottom: 1rem;
+}
+
+.footer-texto {
+    font-size: 0.9rem;
+    color: var(--color-texto);
+    opacity: 0.6;
+}
+
+/* ============================================
+   ANIMACIONES REVEAL
+   ============================================ */
+.revelar {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.revelar.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.tarjeta-reveal:nth-child(1) { transition-delay: 0.1s; }
+.tarjeta-reveal:nth-child(2) { transition-delay: 0.2s; }
+.tarjeta-reveal:nth-child(3) { transition-delay: 0.3s; }
+.tarjeta-reveal:nth-child(4) { transition-delay: 0.4s; }
+.tarjeta-reveal:nth-child(5) { transition-delay: 0.5s; }
+.tarjeta-reveal:nth-child(6) { transition-delay: 0.6s; }
+
+/* ============================================
+   RESPONSIVIDAD
+   ============================================ */
+@media (max-width: 768px) {
+    .seccion {
+        padding: 3rem 0;
+    }
+    
+    /* Niebla más sutil en móvil para no afectar rendimiento */
+    .niebla-frontal {
+        display: none;
+    }
+    
+    .tarjeta-cuerpo {
+        padding: 1.25rem;
+    }
+}
