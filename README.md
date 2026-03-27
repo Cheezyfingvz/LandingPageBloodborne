@@ -21,12 +21,11 @@ Bootstrap 5: Principalmente para que el sistema de columnas fuera rápido de arm
 
 JS (Vanilla): Un poco de código para que los elementos aparezcan con animaciones suaves al bajar con el scroll.
 
-📁 Estructura del Proyecto
+Estructura del Proyecto
 Plaintext
 Pagina Bloodborne/
 ├── index.html       # La base de todo
 ├── estilos.css      # El decorativo de la página
 ├── README.md        # Este texto
-└── assets/          # Imágenes y recursos
 
-Que la buena sangre guíe tu camino.
+Que la buena sangre guíe tu camino, cazador🩸
