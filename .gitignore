@@ -1,0 +1,29 @@
+# Archivos del sistema operativo
+.DS_Store
+Thumbs.db
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+
+# Editores
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Node (por si acaso)
+node_modules/
+package-lock.json
+
+# Python (por si acaso)
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Otros
+.env
+.env.local
+.cache/
